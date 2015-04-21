@@ -22,7 +22,7 @@
 			<jsp:getProperty property="user_ID" name="loginBean"/>
 		</p>  
   	
-		<h1>Página crear perfil</h1>
+		<h1>Página crear perfil.Saludos desde Github</h1>
 		<p>Aquí habrá que mostrar el formulario para rellenarlo.</p>
 	  <h1>Formulario de registro</h1>
 <h1>Crea tu perfil</h1>
