@@ -14,7 +14,13 @@ import org.apache.struts.action.ActionMapping;
 import com.mistrutswebapp.beans.LoginBean;
 import com.mistrutswebapp.beans.UsuarioBean;
 
+/**
+ * <p>Descripcion general de lo que hace esta clase</p>
+ * @author Autor
+ * @version Version
+ */
 public class AltaAction extends Action {
+	
 	 private static Log log = LogFactory.getLog(PageHomeAction.class);
 	  
 	  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response)
