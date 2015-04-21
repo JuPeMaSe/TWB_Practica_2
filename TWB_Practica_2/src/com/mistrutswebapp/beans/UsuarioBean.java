@@ -13,6 +13,7 @@ import org.apache.struts.action.ActionMessage;
 import org.apache.struts.validator.ValidatorForm;
 
 import com.mistrutswebapp.dao.UsuarioDAO;
+import com.mistrutswebapp.model.ModelFacade;
 import com.mistrutswebapp.model.Perfil;
 import com.mistrutswebapp.model.Usuario;
 
@@ -191,26 +192,18 @@ public class UsuarioBean extends ValidatorForm implements Serializable{
 	 * @param user_ID
 	 * @return boolean
 	 */
-private boolean isValido(String user_ID) {
-	boolean valido=true;
-	UsuarioDAO usuarioDAO = new UsuarioDAO();
-	ArrayList<Usuario> usuarioLista = (ArrayList<Usuario>)usuarioDAO.leerUsuarios("");
-	//Collection<Usuario> usuarioLista = usuarioDAO.leerUsuarios("");
-	//System.out.println("UsuarioBean-->isValido-->usuarioLista tamaño= "+usuarioLista.size());
-	Iterator<Usuario> it = usuarioLista.iterator();
-	//System.out.println("UsuarioBean-->isValido-->it tamaño = "+it.toString());
-	Usuario usu= null;
-	//System.out.println("UsuarioBean-->isValido-->antes del while. -->");
-	while (it.hasNext()){
-		//System.out.println("UsuarioBean-->isValido-->dentro del while");
-		usu= it.next();
-		if(usu.getUser_ID().equals(user_ID)){
-			//System.out.println("UsuarioBean-->isValido-->dentro del if");
-			valido = false;
-		}else{
-			valido = true;
-		}
-	}	
-	return valido;
-}
+	private boolean isValido(String user_ID) {
+		boolean valido=true;
+		Collection<Usuario> usuarioLista = ModelFacade.getUsuarios("");
+		Iterator<Usuario> it = usuarioLista.iterator();
+		Usuario usu= null;
+		//Recorre la BD y si hay una coincidencia de user_ID pone valido a false
+		while (it.hasNext()){
+			usu= it.next();
+			if(usu.getUser_ID().equals(user_ID)){
+				valido= false;
+			}
+		}	
+		return valido;
+	}
 }

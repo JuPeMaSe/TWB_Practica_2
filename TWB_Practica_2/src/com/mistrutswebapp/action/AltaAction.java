@@ -22,6 +22,7 @@ import org.apache.struts.action.ActionMapping;
 import com.mistrutswebapp.beans.LoginBean;
 import com.mistrutswebapp.beans.UsuarioBean;
 import com.mistrutswebapp.dao.UsuarioDAO;
+import com.mistrutswebapp.model.ModelFacade;
 import com.mistrutswebapp.model.Usuario;
 
 /**
@@ -31,7 +32,16 @@ import com.mistrutswebapp.model.Usuario;
  */
 public class AltaAction extends Action {
 	
+<<<<<<< HEAD
 	 private static Log log = LogFactory.getLog(PageHomeAction.class);
+=======
+	
+	
+	
+	
+	
+	 private static Log log = LogFactory.getLog(AltaAction.class);
+>>>>>>> branch 'master' of https://github.com/JuPeMaSe/TWB_Practica_2.git
 	 private UsuarioBean usuarioBean;
 	  
 	  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response)
@@ -51,9 +61,14 @@ public class AltaAction extends Action {
 		}
 		else
 		{
-			addUsuario();
+			//addUsuario();
+			ModelFacade.crearUsuario(usuarioBean);
 			compruebaAltaBD();
 			log.info("In AltaAction: usuario registrado: "+usuarioBean.getUser_ID());
+			//pasamos la información al loginBean
+			LoginBean loginBean = (LoginBean)session.getAttribute("loginBean");
+			loginBean.setUser_ID(usuarioBean.getUser_ID());
+			loginBean.setPassword(usuarioBean.getPassword());
 			return mapping.findForward("succes");
 		}
 		  
@@ -84,24 +99,24 @@ public class AltaAction extends Action {
 	     }
 	}
 
-	//Este método habría que meterlo en la clase modelfacade 
-	private void addUsuario() {
-		Usuario usuario =new Usuario();
-		try{
-			PropertyUtils.copyProperties(usuario, usuarioBean);
-			//log.info("copy propertues usuario apellidos== "+ usuario.getApellidos());
-		}catch(IllegalAccessException e){
-		    log.error(e.getMessage());
-		   // return null;
-		}catch(java.lang.reflect.InvocationTargetException e){
-			log.error(e.getMessage());
-		    //return null;
-		}catch(NoSuchMethodException e){
-			log.error(e.getMessage());
-		    //return null;
-		}
-		UsuarioDAO usuarioDAO = new UsuarioDAO();
-		usuarioDAO.crearUsuario(usuario);
-	}
+//	//Este método habría que meterlo en la clase modelfacade 
+//	private void addUsuario() {
+//		Usuario usuario =new Usuario();
+//		try{
+//			PropertyUtils.copyProperties(usuario, usuarioBean);
+//			//log.info("copy propertues usuario apellidos== "+ usuario.getApellidos());
+//		}catch(IllegalAccessException e){
+//		    log.error(e.getMessage());
+//		   // return null;
+//		}catch(java.lang.reflect.InvocationTargetException e){
+//			log.error(e.getMessage());
+//		    //return null;
+//		}catch(NoSuchMethodException e){
+//			log.error(e.getMessage());
+//		    //return null;
+//		}
+//		UsuarioDAO usuarioDAO = new UsuarioDAO();
+//		usuarioDAO.crearUsuario(usuario);
+//	}
 
 }
