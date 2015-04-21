@@ -24,51 +24,81 @@
   	
 		<h1>Página crear perfil</h1>
 		<p>Aquí habrá que mostrar el formulario para rellenarlo.</p>
-	<!--  <h1>Formulario de registro</h1>
-<html:form action="/processlogin"> 
-	<table>
-				<tr>
-					<td><label for="nombre">Nombre:</label></td>
-					<td><html:text property="userName"/></td>
-					 <td><html:errors property="userName" /></td>
-				</tr>
-				  <tr>
-					<td><label for="apellidos">Apellidos</label></td>
-					<td><html:text property="apellidos"/></td>
-					<td><html:errors property="apellidos"/></td>
-				</tr>
-				<tr>
-					<td><label for="password">Contraseña:</label></td>
-					<td><html:password property="password"/></td>
-					<td><html:errors property="password" /></td>
-				</tr>-->
-				<!--Repetimos la contraseña para validar?-->
-				<!--  <tr>
-					<td><label for="password2">Repita la Contraseña:</label></td>
-					<td><input type="password" name="password2" value="" /></td>
-				</tr>
-				<tr>
-					<td><label for="fe_nac">Fecha de Nacimiento:</label></td>
-					<td><input type="text" name="fe_nac" value="" /></td>
-				</tr>
-				<tr>
-					<td><label for="tfno">Teléfono</label></td>
-					<td><html:text property="tfno"/></td>
-					<td><html:errors property="tfno" /></td>
-				</tr>
-				<tr>
-					<td><label for="email">Correo Electrónico:</label></td>
-					<td><html:text property="email"/></td>
-					<td><html:errors property="email" /></td>
-				</tr>
-				<tr>
-					<td><html:submit>Submit</html:submit></td>
-				</tr>
-			</table>
+	  <h1>Formulario de registro</h1>
+<h1>Crea tu perfil</h1>
+			<!-- el action tendrá que ir hacia processCrear -->
+			<html:form action="/processlogin" enctype="multipartform-data">
+				<table>
+					<tr>
+						<td><label for="nombre_Tit">Titulacion:</label></td>
+						<td><html:text property="nombre_Tit" /></td>
+						<td><html:errors property="nombre_Tit" /></td>
+					</tr>
+					<tr>
+						<td><label for="nombre_Tec">Tecnología:</label></td>
+						<td><html:text property="nombre_Tec" /></td>
+						<td><html:errors property="nombre_Tec" /></td>
+					</tr>
+					<!-- Con la experiencia también se podrían poner los campos cargo, año de inicio y de fin, desactivados y activarlos con js -->
+					<tr>
+						<td><label for="empresa">Empresa:</label></td>
+						<td><html:text property="empresa" /></td>
+						<td><html:errors property="empresa" /></td>
+					</tr>
+					<tr>
+						<td><label for="cargo">Cargo:</label></td>
+						<td><html:text property="cargo" /></td>
+						<td><html:errors property="cargo" /></td>
+					</tr>
+					<tr>
+						<td><label for="a_Inicio">Año de inicio:</label></td>
+						<td><html:text property="a_Inicio" /></td>
+						<td><html:errors property="a_Inicio" /></td>
+					</tr>
+					<tr>
+						<td><label for="a_Fin">Año de finalización:</label></td>
+						<td><html:text property="a_Fin" /></td>
+						<td><html:errors property="a_Fin" /></td>
+					</tr>
+					<tr>
+						<td><label for="pais">País:</label></td>
+						<td><html:text property="pais" /></td>
+						<td><html:errors property="pais" /></td>
+					</tr>
+					<tr>
+						<td><label for="provincia">Provincia:</label></td>
+						<td><html:text property="provincia" /></td>
+						<td><html:errors property="provincia" /></td>
+					</tr>
+					<tr>
+						<td><label for="localidad">Localidad:</label></td>
+						<td><html:text property="localidad" /></td>
+						<td><html:errors property="localidad" /></td>
+					</tr>
+					<tr>
+						<td><label for="direccion">Dirección:</label></td>
+						<td><html:text property="direccion" /></td>
+						<td><html:errors property="direccion" /></td>
+					</tr>
+					<tr>
+						<td><label for="pdf">Incluye un curriculum en PDF:</label></td>
+						<td><html:file property="pdf" /></td>
+						<td><html:errors property="pdf" /></td>
+					</tr>
+					<tr>
+						<td><label for="fotografia">Fotografía:</label></td>
+						<td><html:file property="fotografia" /></td>
+						<td><html:errors property="fotografia" /></td>
+					</tr>
 
 
- </html:form>-->
-	
+					<tr>
+						<td><html:submit>Submit</html:submit></td>
+					</tr>
+				</table>
+
+
+			</html:form>
 
 
 
