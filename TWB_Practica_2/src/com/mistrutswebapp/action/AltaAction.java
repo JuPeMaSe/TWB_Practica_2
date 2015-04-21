@@ -25,7 +25,15 @@ import com.mistrutswebapp.dao.UsuarioDAO;
 import com.mistrutswebapp.model.ModelFacade;
 import com.mistrutswebapp.model.Usuario;
 
+/**
+ * <p>Descripcion general de lo que hace esta clase</p>
+ * @author Autor
+ * @version Version
+ */
 public class AltaAction extends Action {
+	
+	
+	
 	 private static Log log = LogFactory.getLog(AltaAction.class);
 	 private UsuarioBean usuarioBean;
 	  
