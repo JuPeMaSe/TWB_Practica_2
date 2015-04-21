@@ -4,6 +4,7 @@
    xmlns:html="http://struts.apache.org/tags-html" 	
     xmlns:bean="http://struts.apache.org/tags-bean"	
    version="2.0">
+<jsp:directive.page import="java.sql.Date"/>
 <jsp:directive.page contentType="text/html"/>   
 <jsp:output omit-xml-declaration="false"
  doctype-root-element="html"
@@ -11,7 +12,7 @@
  doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
 <html:html xhtml="true">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html" />
 	<link href="threeregion.css" rel="stylesheet" type="text/css" />
 	<title>Alta de usuario</title>
 </head>
@@ -28,7 +29,7 @@
 		<html:form action="/processAlta"> 
 	<table>
 				<tr>
-					<td>Nombre:</td>
+					<td>User_ID:</td>
 					<td><html:text property="user_ID"/></td>
 					 <td><html:errors property="user_ID" /></td>
 				</tr>
@@ -43,7 +44,7 @@
 <!-- 					<td><input type="password" name="password2" value="" /></td> -->
 <!--  				</tr> -->
 				 <tr>
-					<td>Apellidos</td>
+					<td>Nombre</td>
 					<td><html:text property="nombre"/></td>
 					<td><html:errors property="nombre"/></td>
 				</tr>
@@ -54,8 +55,10 @@
 				</tr>
 				
 				<tr>
+				
 					<td>Fecha de Nacimiento:</td>
-					<td><input type="text" name="fe_Nac" value="" /></td>
+					
+					<td><input type="date" name="fe_Nac" value="2015-03-25"/></td> 
 					<td><html:errors property="fe_Nac"/></td>
 				</tr>
 				<tr>
@@ -69,8 +72,8 @@
 					<td><html:errors property="email" /></td>
 				</tr>
 				 <tr>
-					<td>Apellidos</td>
-					<td><html:text property="userType"/>usu</td>
+					<td>Tipo de usuario</td>
+					<td><html:text property="userType" value="usu"/></td>
 					<td><html:errors property="userType"/></td>
 				</tr>
 				<tr>

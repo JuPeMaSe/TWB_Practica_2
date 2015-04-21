@@ -5,7 +5,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
+/**import java.util.Date;**/
+import java.sql.Date;
 
 
 public class Usuario implements Serializable {
@@ -13,15 +14,15 @@ public class Usuario implements Serializable {
 	private String password;
 	private String nombre;
 	private String apellidos;
-	private Date fe_Nac; //hay que revisar tipo
+	//private Date fe_Nac; //hay que revisar tipo
 	private String tfno;
 	private String email;
 	private String userType; //Está limitado a 3 caracteres en la BD
-	private Collection<Perfil> perfiles;
+	//private Collection<Perfil> perfiles;
 	
 	public Usuario(){
 		super();
-		perfiles=new ArrayList<Perfil>();
+		//perfiles=new ArrayList<Perfil>();
 	}
 	
 	/**
@@ -80,19 +81,19 @@ public class Usuario implements Serializable {
 		this.apellidos = apellidos;
 	}
 
-	/**
-	 * @return the fe_Nac
-	 */
-	public Date getFe_Nac() {
-		return fe_Nac;
-	}
-
-	/**
-	 * @param fe_Nac the fe_Nac to set
-	 */
-	public void setFe_Nac(Date fe_Nac) {
-		this.fe_Nac = fe_Nac;
-	}
+//	/**
+//	 * @return the fe_Nac
+//	 */
+//	public Date getFe_Nac() {
+//		return fe_Nac;
+//	}
+//
+//	/**
+//	 * @param fe_Nac the fe_Nac to set
+//	 */
+//	public void setFe_Nac(java.sql.Date fe_Nac) {
+//		this.fe_Nac = fe_Nac;
+//	}
 	
 //	private String getFormattedDate()
 //	 {
@@ -141,27 +142,27 @@ public class Usuario implements Serializable {
 		this.userType = userType;
 	}
 
-	/**
-	 * @return the perfiles
-	 */
-	public Collection<Perfil> getPerfiles() {
-		return perfiles;
-	}
-
-	/**
-	 * @param perfiles the perfiles to set
-	 */
-	public void setPerfiles(Collection<Perfil> perfiles) {
-		this.perfiles = perfiles;
-	}
-
-	/**
-	 * 
-	 */
-	public void addPerfil(Perfil perfil){
-		perfiles.add(perfil);
-		perfil.setUser_ID(this.user_ID);
-	}
+//	/**
+//	 * @return the perfiles
+//	 */
+//	public Collection<Perfil> getPerfiles() {
+//		return perfiles;
+//	}
+//
+//	/**
+//	 * @param perfiles the perfiles to set
+//	 */
+//	public void setPerfiles(Collection<Perfil> perfiles) {
+//		this.perfiles = perfiles;
+//	}
+//
+//	/**
+//	 * 
+//	 */
+//	public void addPerfil(Perfil perfil){
+//		perfiles.add(perfil);
+//		perfil.setUser_ID(this.user_ID);
+//	}
 	
 }
 
