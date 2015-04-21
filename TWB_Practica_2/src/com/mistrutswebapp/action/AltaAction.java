@@ -34,6 +34,9 @@ public class AltaAction extends Action {
 	
 	
 	
+	
+	
+	
 	 private static Log log = LogFactory.getLog(AltaAction.class);
 	 private UsuarioBean usuarioBean;
 	  
