@@ -48,7 +48,7 @@ public class CreaBDAction extends Action {
               con=ds.getConnection();
               //System.out.println(con);
 			  log.info("In LoginAction despues de connection");
-         // try {  
+			  // try {  
               st  = con.createStatement();  
               //Creamos la tabla Usuario
               sql = "CREATE TABLE Usuario(" +
@@ -56,7 +56,7 @@ public class CreaBDAction extends Action {
               		"	password VARCHAR(30)," +
               		"	nombre VARCHAR(50)," +
               		"	apellidos VARCHAR(60)," +
-              		"	fe_Nac DATE," +
+              	//	"	fe_Nac DATE," +	//da problemas con el tipo de dato
               		"	tfno CHAR(9)," +
               		"	email VARCHAR(60)," +
               		"	userType VARCHAR(3));";
@@ -118,12 +118,12 @@ public class CreaBDAction extends Action {
               
               //Borramos los usuarios que existiesen en la tabla Usuario  
               st.executeUpdate("DELETE FROM Usuario");  
-           // Varios usuarios de prueba  
-              st.executeUpdate("INSERT INTO Usuario (user_ID, password, nombre, apellidos, tfno, email, userType) " +
-              		"VALUES ('jpms', '4367',  'Juan Pedro', 'Marquez Sevilla','', '','adm')");
-              //st.executeUpdate("INSERT INTO Usuario (User_ID, Password, Nombre) VALUES ('jpms', '4367',  'Juan Pedro')");
-              st.executeUpdate("INSERT INTO Usuario (user_ID, password, nombre) VALUES ('ja', '5367',  'Jose Angel')");  
-      			st.executeUpdate("INSERT INTO Usuario (user_ID, password, nombre) VALUES ('jj', '6367',  'Juan Jose')");  
+//           // Varios usuarios de prueba  
+//              st.executeUpdate("INSERT INTO Usuario (user_ID, password, nombre, apellidos, tfno, email, userType) " +
+//              		"VALUES ('jpms', '4367',  'Juan Pedro', 'Marquez Sevilla','', '','adm')");
+//              //st.executeUpdate("INSERT INTO Usuario (User_ID, Password, Nombre) VALUES ('jpms', '4367',  'Juan Pedro')");
+//              st.executeUpdate("INSERT INTO Usuario (user_ID, password, nombre) VALUES ('ja', '5367',  'Jose Angel')");  
+//      			st.executeUpdate("INSERT INTO Usuario (user_ID, password, nombre) VALUES ('jj', '6367',  'Juan Jose')");  
 	// Mostramos por pantalla todos los usuarios de la tabla  
             rst1 = st.executeQuery("SELECT * FROM Usuario");  
             while (rst1.next()){  
